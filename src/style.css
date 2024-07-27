@@ -6,67 +6,91 @@
   font-family: playwrite;
   src: url(./fonts/PlaywriteBEVLG-VariableFont_wght.ttf);
 }
-
-:root{
-
+@font-face {
+  font-family: brush;
+  src: url(./fonts/CaveatBrush-Regular.ttf);
 }
 
-body{
-  height:100vh;
-  margin:0px;
-  box-shadow: inset 0px 0px 50px 3px grey;
-  *{
+:root {
+}
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 0px;
+  box-shadow: inset 0px 0px 50px 5px black;
+  background-image: url(./images/pizza-banner.jpg);
+  background-color: aliceblue;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: 80% 80%;
+  * {
     font-family: roboto-reg;
   }
 }
-header nav{
-  display:flex;
+header nav {
+  display: flex;
   justify-content: space-around;
-  margin:0px;
+  margin: 10px;
   padding: 20px;
+  padding-left: 100px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px 1px rgb(75, 75, 75);
   /* background-image: linear-gradient(320deg,rgba(239, 68, 68,0.8) 10%,rgba(239, 68, 68,0.4) 20%,rgba(239, 68, 68,0.6)27%,rgba(239, 68, 68,0.8) 32%); */
   /* backdrop-filter: blur(10px); */
-  background-color: rgb(239, 68, 68);
-  box-shadow:0px 0px 50px 3px grey;
-  #nav-logo{
-    color:white;
+  background-color: rgba(239, 68, 68, 0.8);
+  /* box-shadow: 0px 0px 50px 3px grey; */
+  #nav-logo {
+    color: white;
     font-size: 2rem;
-    padding:0px;
+    padding: 0px;
     margin: 0px;
     margin-right: auto;
   }
-  .nav-button{
-    padding:10px 30px;
+  .nav-button {
+    padding: 10px 30px;
     border: 0px;
     font-size: 1.1rem;
     border-radius: 5px;
     color: white;
     /* background-color: #fef2f2; */
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     /* border: 2px solid #c2410c; */
   }
-  .nav-button:hover{
+  .nav-button:hover {
     color: orange;
   }
 }
 
-#content{
-  #banner{
-    margin:0px;
+#content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(5px);
+  padding-bottom: 20px;
+  /* display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 2fr; */
+  #banner {
+    /* grid-area: 1/1/2/3; */
+    height: 400px;
+    margin: 0px;
     padding: 0px;
     margin-top: 20px;
-    height: 30vh;
-    width: 100vw;
-    background-image:url(./images/pizza-banner.jpg) ;
+    /* background-image: url(./images/pizza-banner.jpg); */
     background-size: cover;
     background-position: 15% 55%;
     background-repeat: no-repeat;
     display: flex;
     justify-content: end;
     align-items: center;
-    #banner-restaurant-name{
+    #banner-restaurant-name {
       font-family: playwrite;
-      margin:0px;
+      margin: 0px;
       height: 100%;
       width: 100%;
       display: flex;
@@ -74,9 +98,65 @@ header nav{
       font-size: 5rem;
       justify-content: center;
       align-items: center;
-      background: rgba(255,255,255,0.4);
+      background: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(10px);
-
     }
   }
+  #testimonials {
+    margin-top: 30px;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0px;
+    .testimonial-card {
+      display: flex;
+      width: 100vw;
+      white-space: nowrap;
+      justify-content: center;
+      font-family: brush;
+      font-size: 5rem;
+    }
+    .testimonial-button {
+      outline: none;
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(150deg)
+        brightness(103%) contrast(103%);
+      border: none;
+      height: 100px;
+      margin: 0px 10px;
+      width: 100px;
+    }
+    .testimonial-button.left {
+      background: url("./svg/leftarrow.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .testimonial-button.right {
+      background: url("./svg/rightarrow.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+  #location {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      font-size: 2rem;
+      color: white;
+      margin-left: 10px;
+    }
+    #map {
+      border-radius: 20px;
+      align-self: center;
+    }
+  }
+}
+
+.brand-name{
+  font-family: brush;
+  color: rgba(239, 68, 68, 1);
 }
