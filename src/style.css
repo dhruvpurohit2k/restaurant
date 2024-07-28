@@ -10,7 +10,10 @@
   font-family: brush;
   src: url(./fonts/CaveatBrush-Regular.ttf);
 }
-
+@font-face {
+  font-family: indie-flower;
+  src: url(./fonts/IndieFlower-Regular.ttf);
+}
 :root {
 }
 html {
@@ -19,23 +22,20 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  height: auto;
+  height: 100%;
   margin: 0px;
-  background-color: aliceblue;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: 80% 80%;
-  * {
+  /* background-color: aliceblue; */
+   > * {
     font-family: roboto-reg;
+    backdrop-filter: blur(2px);
   }
 }
 header nav {
   display: flex;
   position: relative;
-  z-index: 2;
   justify-content: space-around;
   margin: 10px;
+  z-index: 2;
   padding: 20px;
   padding-left: 100px;
   border-radius: 20px;
@@ -67,20 +67,26 @@ header nav {
 #content {
   /* margin-top:10px; */
   #banner {
-    padding:150px;
+    padding:120px;
+    margin-top:40px;
     padding-top:0px;
     display: flex;
+    background-color: gold;
+    border: 8px solid black;
+    justify-content: center;
     .img {
       background: url(./svg/Pizza.svg), linear-gradient(#e01935 50%,#0066a7 50%);
       background-size: cover;
       background-repeat: no-repeat;
       height: 300px;
+      border: 5px solid black;
       width:300px;
       transform: rotate(20deg);
       /* border: 5px double yellow; */
     }
     p{
-      margin-left: auto;
+      /* margin-left: auto; */
+      margin-left:10px;
       align-self: flex-end;
       font-family: brush;
       font-size:3.5rem;
@@ -90,6 +96,66 @@ header nav {
         border-bottom: 3px solid #0066a7;
       }
 
+    }
+  }
+  #about{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .alcolade-card{
+      list-style-type: none;
+      line-height: 1.5;
+      li{
+        margin:20px;
+        font-family: indie-flower;
+        font-size: 1.75rem;
+        padding:10px;
+        border:3px solid #e01935;
+        background-color: #0066a7;
+        color: white;
+        border-radius: 5px;
+      }
+    }
+    .tag-card{
+      align-self: start;
+      height: 550px;
+      display: flex;
+      margin: 10px 5px;
+      width:550px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* width:250px; */
+      /* border: 3px double #0066a7;
+      background-color: #e01935; */
+      background-image: url(./images/bang-clipart.png);
+      background-size: cover;
+      background-repeat:no-repeat ;
+      border-radius: 10px;
+      padding: 5px;
+    }
+    p{
+      transform: translateY(45px) translateX(10px);
+      margin: 0px;
+      color: black;
+      font-family: brush;
+      font-size: 1.35rem;
+    }
+  }
+  #location{
+    margin-top: 40px;
+    padding:0px 120px;
+    display: flex;
+    justify-content: center;
+    p{
+      font-size:5rem;
+      font-family: brush;
+      color: #0066a7;
+    }
+    iframe{
+      border: 3px solid #0066a7;
+      margin-left:200px;
+      border-radius: 20px;
     }
   }
 }
