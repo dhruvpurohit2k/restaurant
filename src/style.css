@@ -14,7 +14,12 @@
   font-family: indie-flower;
   src: url(./fonts/IndieFlower-Regular.ttf);
 }
+@font-face {
+  font-family: bangers;
+  src: url(./fonts/Bangers-Regular.ttf);
+}
 :root {
+  --blue: #0067a7;
 }
 html {
   height: 100%;
@@ -22,30 +27,34 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  height: 100%;
   margin: 0px;
-  /* background-color: aliceblue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url(./images/kitchen.jpg);
+  background-size: cover;
    > * {
+    width: 100%;
+    max-width: 1920px;
     font-family: roboto-reg;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(10px);
+    border-radius: 100px;
   }
+
 }
 header nav {
   display: flex;
   position: relative;
   justify-content: space-around;
-  margin: 10px;
-  z-index: 2;
   padding: 20px;
   padding-left: 100px;
-  border-radius: 20px;
-  /* background-image: linear-gradient(320deg,rgba(239, 68, 68,0.8) 10%,rgba(239, 68, 68,0.4) 20%,rgba(239, 68, 68,0.6)27%,rgba(239, 68, 68,0.8) 32%); */
-  /* backdrop-filter: blur(10px); */
-  background-color: #0066a7;
-  /* box-shadow: 0px 0px 50px 3px grey; */
+  /* background: rgb(0, 102, 167); */
+  background: rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0px 0px 2px 5px #0067a77d; */
   #nav-logo {
     color: white;
-    font-size: 2rem;
+    font-size: 3rem;
     padding: 0px;
     margin: 0px;
     margin-right: auto;
@@ -54,108 +63,54 @@ header nav {
     padding: 10px 30px;
     border: 0px;
     font-size: 1.1rem;
-    border-radius: 5px;
+    border-radius: 20px;
     color: white;
-    /* background-color: #fef2f2; */
     background-color: rgba(0, 0, 0, 0);
-    /* border: 2px solid #c2410c; */
   }
   .nav-button:hover {
-    color: #ff6b82;
+    /* background-color: #00446e51; */
+    background-color: rgba(128, 128, 128, 0.3);
   }
 }
 #content {
-  /* margin-top:10px; */
-  #banner {
-    padding:120px;
-    margin-top:40px;
-    padding-top:0px;
-    display: flex;
-    background-color: gold;
-    border: 8px solid black;
-    justify-content: center;
-    .img {
-      background: url(./svg/Pizza.svg), linear-gradient(#e01935 50%,#0066a7 50%);
-      background-size: cover;
-      background-repeat: no-repeat;
-      height: 300px;
-      border: 5px solid black;
-      width:300px;
-      transform: rotate(20deg);
-      /* border: 5px double yellow; */
-    }
-    p{
-      /* margin-left: auto; */
-      margin-left:10px;
-      align-self: flex-end;
-      font-family: brush;
-      font-size:3.5rem;
-      color: #0066a7;
-      em{
-        font-family: brush;
-        border-bottom: 3px solid #0066a7;
+  margin-top:50px;
+  /* max-width: 1920px; */
+  #banner{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    height:450px;
+    width:100%;
+    background: rgba(0, 0, 0, 0.5);
+    .image-card{
+      height:30vh;
+      width:auto;
+      img{
+        height:100%;
+        width:auto;
+        /* border: 3px solid #0067a7; */
+        border: 3px solid rgba(128, 128, 128, 0.3);
+        /* box-shadow: 0px 0px 2px 5px #0067a77d; */
       }
-
     }
   }
-  #about{
+  #alcolades{
+    width: 100%;
+    margin-top: 60px;
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
-    .alcolade-card{
-      list-style-type: none;
-      line-height: 1.5;
-      li{
-        margin:20px;
-        font-family: indie-flower;
-        font-size: 1.75rem;
-        padding:10px;
-        border:3px solid #e01935;
-        background-color: #0066a7;
-        color: white;
-        border-radius: 5px;
-      }
-    }
-    .tag-card{
-      align-self: start;
-      height: 550px;
+    /* background-color: rgb(192, 225, 253,0.5); */
+    background-color: rgb(0, 0, 0,0.5);
+    padding:20px 0px;
+    p{
+      /* background-color: #0067a7; */
+      padding:30px;
+      border-radius: 20px;
+      color: aliceblue;
       display: flex;
-      margin: 10px 5px;
-      width:550px;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      /* width:250px; */
-      /* border: 3px double #0066a7;
-      background-color: #e01935; */
-      background-image: url(./images/bang-clipart.png);
-      background-size: cover;
-      background-repeat:no-repeat ;
-      border-radius: 10px;
-      padding: 5px;
-    }
-    p{
-      transform: translateY(45px) translateX(10px);
-      margin: 0px;
-      color: black;
-      font-family: brush;
-      font-size: 1.35rem;
     }
   }
-  #location{
-    margin-top: 40px;
-    padding:0px 120px;
-    display: flex;
-    justify-content: center;
-    p{
-      font-size:5rem;
-      font-family: brush;
-      color: #0066a7;
-    }
-    iframe{
-      border: 3px solid #0066a7;
-      margin-left:200px;
-      border-radius: 20px;
-    }
-  }
+  
 }
