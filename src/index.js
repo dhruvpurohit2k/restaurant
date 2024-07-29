@@ -1,4 +1,5 @@
-import './style.css';
+import createAboutPage from './about';
+import './index-style.css';
 import pizzapic1 from './images/pizza-pic1.jpg';
 import pizzapic2 from './images/pizza-pic2.jpg';
 import pizzapic3 from './images/pizza-pic3.jpg';
@@ -11,12 +12,13 @@ bannerpic2.src = pizzapic2;
 let bannerpic3 = new Image();
 bannerpic3.src = pizzapic3;
 
+let home = document.querySelectorAll("nav button")[0];
+let menu = document.querySelectorAll("nav button")[1];
+let about = document.querySelectorAll("nav button")[2];
+let body = document.querySelector("body");
+body.setAttribute("style", `background-image: url(${background})`);
+let content = document.querySelector("#content");
 function createHomePage() {
-  let body = document.querySelector("body");
-  body.setAttribute("style", `background-image: url(${background})`);
-
-  let content = document.querySelector("#content");
-
   let banner = document.createElement("div");
   banner.setAttribute("id", "banner");
   let div = document.createElement("div");
@@ -43,4 +45,14 @@ function createHomePage() {
 }
 
 
-createHomePage();
+// createHomePage();
+createAboutPage();
+
+about.addEventListener("click", () => {
+  content.innerHTML = "";
+  createAboutPage();
+})
+home.addEventListener("click", () => {
+  content.innerHTML = "";
+  createHomePage();
+})
