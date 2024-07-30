@@ -4,6 +4,7 @@ import pizzapic1 from './images/pizza-pic1.jpg';
 import pizzapic2 from './images/pizza-pic2.jpg';
 import pizzapic3 from './images/pizza-pic3.jpg';
 import background from './images/kitchen.jpg'
+import createMenuPage from './menu';
 
 let bannerpic1 = new Image();
 bannerpic1.src = pizzapic1;
@@ -38,16 +39,16 @@ function createHomePage() {
   let alcolade = document.createElement("p");
   alcolade.textContent = "The Best Pizza in New Delhi";
   alcolades.appendChild(alcolade.cloneNode("true"));
+  alcolade.textContent = "Dine-in at the Top-rated Authentic Restaurant";
   alcolades.appendChild(alcolade.cloneNode("true"));
+  alcolade.textContent = "Late Night Food Delivery in New Delhi";
   alcolades.appendChild(alcolade.cloneNode("true"));
 
   content.appendChild(alcolades);
 }
 
 
-// createHomePage();
-createAboutPage();
-
+createHomePage();
 about.addEventListener("click", () => {
   content.innerHTML = "";
   createAboutPage();
@@ -55,4 +56,8 @@ about.addEventListener("click", () => {
 home.addEventListener("click", () => {
   content.innerHTML = "";
   createHomePage();
+})
+menu.addEventListener("click", () => {
+  content.innerHTML = "";
+  createMenuPage();
 })
