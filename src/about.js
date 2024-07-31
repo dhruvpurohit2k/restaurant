@@ -2,10 +2,14 @@ import aboutpicture from './images/pizza-banner.jpg'
 
 function createAboutPage() {
   let text;
+  let heading = document.createElement("h1");
+  heading.setAttribute("id", "about-heading");
+  heading.textContent = "ABOUT US";
   let aboutpic = new Image();
   aboutpic.src = aboutpicture;
   let content = document.querySelector("#content");
   let div = document.createElement("div");
+  div.appendChild(heading);
   div.setAttribute("id", "about");
   let para = document.createElement("p");
   para.textContent = "\

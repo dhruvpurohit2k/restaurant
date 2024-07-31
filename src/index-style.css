@@ -1,4 +1,8 @@
 @font-face {
+  font-family: oswald;
+  src: url(./fonts/Oswald-VariableFont_wght.ttf);
+}
+@font-face {
   font-family: roboto-reg;
   src: url(./fonts/Roboto-Regular.ttf);
 }
@@ -98,6 +102,19 @@ header nav {
       align-items: center;
     }
   }
+  #location {
+    margin-top: 100px;
+    padding: 150px;
+    justify-content: space-around;
+    align-items: center;
+    h1 {
+      font-weight: 500;
+      font-size: 3rem;
+    }
+    iframe{
+      border: 5px solid rgba(128, 128, 128, 0.2);
+    }
+  }
 }
 
 #content {
@@ -112,11 +129,21 @@ header nav {
       border: 5px solid rgba(128, 128, 128, 0.3);
     }
     p {
-      padding: 10px;
-      margin-top: 100px;
-      font-size: 1.5rem;
+      background-color: rgba(128, 128, 128, 0.2);
+      padding: 30px;
+      margin-top: 50px;
+      font-family: oswald;
+      font-size: 1.6rem;
       color: white;
-      line-height: 1.5;
+      line-height: 2;
+      border-radius: 10px;
+    }
+    #about-heading {
+      font-family: roboto-reg;
+      font-size: 3rem;
+      font-weight: 500;
+      border-bottom: 2px solid rgba(256, 256, 256, 0.5);
+      color: rgba(256, 256, 256, 0.5);
     }
   }
 }
